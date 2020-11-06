@@ -22,7 +22,7 @@ plt.hist(df['age'])
 
 plt.hist(df['target'])
 
-"""It's great that we more or less have the same number of both lables. If the number of each labels is equally distributed, we can expect better results during regression and/or classification.
+"""It's great that we more or less have the same number of both labels. If the number of each label is equally distributed, we can expect better results during regression and/or classification.
 
 As we can see, there are 303 entries. The target value 0 suggests the patient doesn't have heart disease, while 1 indicates the patient indeed does have heart disease.
 
@@ -41,7 +41,7 @@ scaler.fit(df.drop('target',axis=1))
 new_feat = scaler.transform(df.drop('target',axis=1))
 df_feat = pd.DataFrame(new_feat,columns=df.columns[:-1])
 
-"""Pairplots are so useful for checking trends. It makes it much easier to figure out which attributes to look out for to identify trends. All the trends will be mentioned at the end of this file."""
+"""Pairplots are so powerful for checking trends. It makes it much easier to figure out which attributes to look out for to identify trends."""
 
 from sklearn.model_selection import train_test_split
 
@@ -77,5 +77,6 @@ weighted avg       0.91      0.91      0.91        76
 Since this application is of medical diagnosis, it's critical to have 0 or less number of false negatives. Even false positives is acceptable but false negatives are disastrous.
 
 Thus, I have managed to get precision of upto 0.9 which is not the best for this application, but definitely not a bad result especially with the false negatives being near 0.
-"""
 
+
+"""
